@@ -8,20 +8,28 @@ const Form = styled.form`
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  width: 50%;
+  box-sizing: border-box;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 25);
+  border-radius: 20px;
+  border: 3px;
+  padding-bottom: 20px;
+
   h1 {
     font-size: 3rem;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
   }
   label {
     margin-left: 5px;
   }
   .div {
-    margin: 5px;
+    width: 90%;
+    margin: auto;
     flex-direction: column;
     display: flex;
   }
   input {
-    width: 30rem;
+    width: 90%;
     height: 30px;
     background: rgb(165, 170, 167);
     color: rgba(242, 249, 244, 1);
@@ -55,11 +63,12 @@ const Form = styled.form`
     height: 40px;
   }
   @media (max-width: 500px) {
+    width: 100%;
+    height: 75vh;
+    justify-content: start;
+    padding-top: 10%;
     h1 {
       font-size: 2.5rem;
-    }
-    input {
-      width: 21rem;
     }
   }
 `;
@@ -112,8 +121,6 @@ const FormPage = () => {
           value={formData.name}
           onChange={handleChange}
         />
-      </div>
-      <div className="div">
         <label htmlFor="email">Email</label>
         <input
           type="email"
@@ -124,8 +131,6 @@ const FormPage = () => {
           value={formData.email}
           onChange={handleChange}
         />
-      </div>
-      <div className="div">
         <label htmlFor="address">Address</label>
         <input
           type="text"

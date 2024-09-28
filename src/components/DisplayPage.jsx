@@ -5,14 +5,26 @@ import styled from "styled-components";
 const DisplayPage = () => {
   const Container = styled.div`
     display: flex;
-    width: 50%;
+    width: 40%;
     margin: auto;
     justify-contents: center;
     flex-direction: column;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 25);
+    transition: 0.5s;
+    border-radius: 20px;
+    border: 3px;
+    padding: 0 20px 20px;
 
     h1 {
       font-size: 3rem;
     }
+    .div {
+      width: 90%;
+      height: 50%;
+      margin: auto;
+      margin-top: 0px;
+    }
+
     strong {
       font-size: 1.2rem;
     }
@@ -36,9 +48,15 @@ const DisplayPage = () => {
       height: 40px;
     }
     @media (max-width: 700px) {
-      width: 100%;
+      width: 90%;
+      height: 75vh;
+      justify-content: start;
+      padding-top: 5%;
       h1 {
         font-size: 2.3rem;
+      }
+      .btn {
+        margin-top: 20%;
       }
     }
   `;
@@ -61,18 +79,20 @@ const DisplayPage = () => {
   return (
     <Container>
       <h1>Submitted Data</h1>
-      <p>
-        <strong>Name:</strong> {formData.name}
-      </p>
-      <p>
-        <strong>Email:</strong> {formData.email}
-      </p>
-      <p>
-        <strong>Address:</strong> {formData.address}
-      </p>
-      <div className="btn">
-        <button onClick={handlePrevious}>Previous</button>
-        <button onClick={handleConfirm}>Confirm</button>
+      <div className="div">
+        <p>
+          <strong>Name:</strong> {formData.name}
+        </p>
+        <p>
+          <strong>Email:</strong> {formData.email}
+        </p>
+        <p>
+          <strong>Address:</strong> {formData.address}
+        </p>
+        <div className="btn">
+          <button onClick={handlePrevious}>Previous</button>
+          <button onClick={handleConfirm}>Confirm</button>
+        </div>
       </div>
     </Container>
   );

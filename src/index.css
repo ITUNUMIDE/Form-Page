@@ -9,6 +9,7 @@ body {
   background-image: url("./assets/form.jpg");
   background-size: cover; 
   background-repeat: no-repeat;
+  background-position: center;
   color: rgb(250, 235, 215);
   
   
